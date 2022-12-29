@@ -2,30 +2,28 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+<div class="row text-center">
+    <h2>Welcome</h2>
+    <p>This is a sample application used to demostrate GCDS Authentication using OIDC.</p>
 </div>
-
 <div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+    <div class="col-md-8 col-md-offset-2">
+        <h4>Specs:</h4>
+        <ul>
+            <li>Visual Studio 2022 Template: ASP.NET Web Application (.NET Framework)</li>
+            <li>MVC Application</li>
+            <li>Target Framework: .NET 4.72</li>
+            <li>Authentication: OIDC</li>
+        </ul>
+        <h4>Testing the application:</h4>
+        <ul>
+            <li>Run the Application from Visual Studio 2022 (F5)</li>
+            <li>You will be see a notice for U.S. Government Systems. Click "I Agree"</li>
+            <li>Click Login, then select your CAC and enter your PIN when prompted</li>
+            <li>You will be redirected back to this home page, with your name or EDIPI displayed at the top right</li>
+            <li>Click the "My Claims" link in the top navigation to view all of your claims</li>
+            <li>Click the "Sign Out" link at the top right</li>
+            <li>Click the "Sign In" link at the top right to log back in</li>
+        </ul>
     </div>
 </div>

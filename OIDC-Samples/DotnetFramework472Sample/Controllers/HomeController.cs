@@ -11,21 +11,39 @@ namespace DotnetFramework472Sample.Controllers
     {
         public ActionResult Index()
         {
-            return View();
-        }
-
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
+            SetDisplayName();
 
             return View();
         }
 
-        public ActionResult Contact()
+        public ActionResult Claims()
         {
-            ViewBag.Message = "Your contact page.";
+            SetDisplayName();
+
+            ViewBag.Message = "Use this page to view all of the claims returned by the Authentication Provider.";
 
             return View();
+        }
+
+        private void SetDisplayName()
+        {
+            var displayName = "Nobody";
+
+            if (System.Security.Claims.ClaimsPrincipal.Current.HasClaim(x => x.Type == "common_name"))
+            {
+                displayName = System.Security.Claims.ClaimsPrincipal.Current.FindFirst("common_name").Value;
+            }
+            else if (System.Security.Claims.ClaimsPrincipal.Current.HasClaim(x => x.Type == "edipi"))
+            {
+                displayName = System.Security.Claims.ClaimsPrincipal.Current.FindFirst("edipi").Value;
+            }
+            else
+            {
+                displayName = "No common_name or edipi claims found";
+            }
+
+            ViewBag.DisplayName = displayName;
+
         }
     }
 }
