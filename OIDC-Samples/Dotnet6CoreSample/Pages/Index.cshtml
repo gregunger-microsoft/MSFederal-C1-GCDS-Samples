@@ -1,0 +1,39 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+
+    //You can get the user and set the display name in this code area of the cshtml (or in the PageModel class if you refer to Claims.cshtml.cs)
+    var myUser = User.Identity as System.Security.Claims.ClaimsIdentity;
+    ViewData["myDisplayName"] = myUser?.FindFirst("common_name")?.Value ?? myUser?.FindFirst("edipi")?.Value;
+}
+
+
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col col-md-8">
+            <h1 class="text-center">Welcome</h1>
+            <p>This is a sample application used to demostrate GCDS Authentication using OIDC.</p>
+        </div>
+    </div>
+    <div class="row justify-content-md-center">
+        <div class="col col-md-8 offset-2">
+            <p>Specs:</p>
+            <ul>
+                <li>Visual Studio 2022 Template: ASP.NET Core Web App (Razor Pages)</li>
+                <li>Target Framework: .NET 6.0</li>        
+                <li>Authentication: OIDC</li>
+            </ul>
+            <p>Testing the application:</p>
+            <ul>
+                <li>Run the Application from Visual Studio 2022 (F5)</li>        
+                <li>You will be see a notice for U.S. Government Systems. Click "I Agree"</li>
+                <li>Click Login, then select your CAC and enter your PIN when prompted</li>        
+                <li>You will be redirected back to this home page, with your name or EDIPI displayed at the top right</li>
+                <li>Click the "My Claims" link in the top navigation to view all of your claims</li>
+                <li>Click the "Sign Out" link at the top right</li>
+                <li>Click the "Sign In" link at the top right to log back in</li>
+            </ul>
+        </div>
+    </div>
+</div>
